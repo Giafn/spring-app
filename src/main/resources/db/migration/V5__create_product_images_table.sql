@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS product_images (
+    id BIGSERIAL PRIMARY KEY,
+    product_id BIGINT NOT NULL REFERENCES products(id) ON DELETE CASCADE,
+    url TEXT NOT NULL,
+    position INT NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT now()
+);
